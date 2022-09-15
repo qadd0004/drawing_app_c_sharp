@@ -1,0 +1,53 @@
+﻿////////////////////////////////////////////////////////////////////////////////////////////////////
+// file:	LineShape.cs
+//
+// summary:	Implements the line shape class
+////////////////////////////////////////////////////////////////////////////////////////////////////
+
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+using System.Drawing;
+
+namespace PolymorphismDrawingApp
+{
+    ////////////////////////////////////////////////////////////////////////////////////////////////////
+    /// <summary>   A line shape. </summary>
+    ///
+    /// <remarks>   Tony Davidson, 2021-03-22. </remarks>
+    ////////////////////////////////////////////////////////////////////////////////////////////////////
+
+    class LineShape : Shape  // LineShape "is a" type of Shape
+    {
+        ////////////////////////////////////////////////////////////////////////////////////////////////////
+        /// <summary>   Default constructor. </summary>
+        ///
+        /// <remarks>   Tony Davidson, 2021-03-22. </remarks>
+        ////////////////////////////////////////////////////////////////////////////////////////////////////
+
+        public LineShape()
+        {
+
+        }
+
+        ////////////////////////////////////////////////////////////////////////////////////////////////////
+        /// <summary>   Draws the given graphics. </summary>
+        ///
+        /// <remarks>   Tony Davidson, 2021-03-22. </remarks>
+        ///
+        /// <param name="graphics"> The graphics object. </param>
+        ////////////////////////////////////////////////////////////////////////////////////////////////////
+
+        public override void Draw(Graphics graphics)
+            //Overide, keyword is used in the derived class to verride the base class method with modified code
+            //in the dervided class method that has the same signature but different body.
+        {
+            formGraphics = graphics;
+
+            formGraphics.DrawLine(pen, startPoint.X, startPoint.Y, endPoint.X, endPoint.Y);
+        }
+    }
+}
